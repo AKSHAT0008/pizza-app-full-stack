@@ -1,0 +1,89 @@
+/* Wrapper with gradient background like hero/service */
+.success-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  background: linear-gradient(to right, #ffe5b4, #ffecd2);
+  padding: 2rem 1rem;
+}
+
+/* Card matches product/service cards */
+.success-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  max-width: 450px;
+  width: 100%;
+  animation: fadeInUp 0.6s ease-out;
+  font-family: system-ui, sans-serif; /* clean default font */
+}
+
+/* Success Icon */
+.success-icon {
+  width: 90px;
+  height: 90px;
+  color: #4caf50; /* same green as veg badge */
+  margin-bottom: 1rem;
+}
+
+/* Title styled like section-head */
+.success-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #d63d3d;
+  margin-bottom: 0.75rem;
+}
+
+/* Message with simple clean font */
+.success-message {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Button matches CTA */
+.success-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.6rem;
+  background-color: #ffffff;
+  color: #ff4e50;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: bounce 2s infinite;
+}
+
+.success-btn:hover {
+  color: #d63d3d;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  animation: none;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}

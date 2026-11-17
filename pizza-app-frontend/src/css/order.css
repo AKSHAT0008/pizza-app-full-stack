@@ -1,0 +1,84 @@
+.order-page {
+  background: linear-gradient(to right, #ffecd2, #ffe5b4);
+  min-height: 100vh;
+  padding: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  color: #d63d3d;
+  margin-bottom: 1.8rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.order-box {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+  padding: 1.8rem;
+  width: 100%;
+  max-width: 420px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.order-price {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  color: #333;
+}
+
+.order-label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.order-select, .order-input {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.8rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-select:focus, .order-input:focus {
+  border-color: #d63d3d;
+  box-shadow: 0 0 6px rgba(214, 61, 61, 0.3);
+}
+
+.order-btn {
+  background: linear-gradient(to right, #d63d3d, #e91e63);
+  color: #fff;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.order-btn:hover {
+  background: linear-gradient(to right, #b83232, #c2185b);
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
