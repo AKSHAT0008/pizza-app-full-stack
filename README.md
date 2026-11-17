@@ -1,27 +1,14 @@
-# 🍕 Pizza App — Full Stack Food Ordering Platform
+# 🍕 Pizza App – Full Stack Web Application
 
-A full-stack pizza ordering application built with React, Redux Toolkit, Node.js, Express.js and MongoDB.
+A full-stack pizza ordering application built with the MERN stack. Users can browse pizzas, view product details, manage their cart, and place orders.
 
-The application provides a platform for users to explore products, create accounts, authenticate, manage their shopping cart and place orders.
-
-## ✨ Features
-
-- User registration and login
-- JWT-based authentication
-- Product listing and product details
-- Shopping cart management
-- Order management
-- Admin product management
-- Image uploads using Cloudinary
-- RESTful API architecture
-- MongoDB database integration
-
-## 🛠️ Tech Stack
+## 🚀 Tech Stack
 
 **Frontend**
-- React.js
+- React 19
 - Vite
 - Redux Toolkit
+- React Router DOM
 - Axios
 - CSS
 
@@ -30,12 +17,22 @@ The application provides a platform for users to explore products, create accoun
 - Express.js
 - MongoDB
 - Mongoose
-- JWT
-- Cookie Parser
-- Multer
+- JWT Authentication
+- bcrypt
 - Cloudinary
+- Multer
 
-## 🏗️ Project Architecture
+## ✨ Features
+
+- User registration and login
+- Browse available pizza products
+- View individual product details
+- Add products to the shopping cart
+- Update cart item quantities
+- Place orders and view order confirmation
+- Upload product images using Cloudinary
+
+## 📁 Project Structure
 
 ```text
 pizza-app-full-stack/
@@ -50,18 +47,20 @@ pizza-app-full-stack/
 │   │   ├── schema/
 │   │   ├── services/
 │   │   ├── utils/
-│   │   └── validation/
-│   ├── package.json
-│   └── .env.example
+│   │   ├── validation/
+│   │   └── index.js
+│   └── package.json
 │
 ├── pizza-app-frontend/
-│   ├── public/
 │   ├── src/
-│   │   ├── Pages/
-│   │   ├── components/
+│   │   ├── assets/
+│   │   ├── css/
 │   │   ├── helpers/
 │   │   ├── layouts/
-│   │   └── redux/
+│   │   ├── Pages/
+│   │   ├── redux/
+│   │   ├── App.jsx
+│   │   └── main.jsx
 │   └── package.json
 │
 └── README.md
@@ -72,7 +71,7 @@ pizza-app-full-stack/
 ### Prerequisites
 
 - Node.js and npm
-- MongoDB Atlas account
+- MongoDB database
 - Cloudinary account
 
 ### 1. Clone the repository
@@ -82,14 +81,23 @@ git clone https://github.com/AKSHAT0008/pizza-app-full-stack.git
 cd pizza-app-full-stack
 ```
 
-### 2. Backend setup
+### 2. Backend Setup
 
 ```bash
 cd pizza-app-backend
 npm install
 ```
 
-Create a `.env` file using `.env.example` and configure your environment variables.
+Create a `.env` file inside `pizza-app-backend/`:
+
+```env
+PORT=5500
+DB_URL=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+CLOUD_NAME=your_cloudinary_cloud_name
+CLOUD_API_KEY=your_cloudinary_api_key
+CLOUD_API_SECRET=your_cloudinary_api_secret
+```
 
 Start the backend:
 
@@ -97,9 +105,13 @@ Start the backend:
 npm start
 ```
 
-### 3. Frontend setup
+The backend runs at:
 
-Open another terminal:
+`http://localhost:5500`
+
+### 3. Frontend Setup
+
+Open a new terminal:
 
 ```bash
 cd pizza-app-frontend
@@ -107,38 +119,51 @@ npm install
 npm run dev
 ```
 
-### 4. Access the application
+The frontend runs at:
 
-Frontend: http://localhost:5173
+`http://localhost:5173`
 
-Backend: http://localhost:5500
+## 🔗 API Configuration
+
+The frontend uses an Axios instance configured in:
+
+`src/helpers/axiosInstance.js`
+
+The current local development configuration points to:
+
+`http://localhost:5500`
+
+Requests are configured with `withCredentials` enabled.
+
+The backend CORS configuration currently allows the local Vite frontend origin.
 
 ## 🔐 Environment Variables
 
-Backend environment variables are required for database connectivity, authentication and image uploads.
-
-See `pizza-app-backend/.env.example` for the required configuration.
-
-Never commit actual credentials or API secrets.
+Keep your actual `.env` file private. Never commit database credentials, JWT secrets, or Cloudinary API secrets to GitHub.
 
 ## 📸 Screenshots
 
-Screenshots of the application will be added here.
+<img width="1535" height="632" alt="image" src="https://github.com/user-attachments/assets/0cc7d288-79d7-45c3-88fb-14c7fde49719" />
 
-## 🚀 Future Improvements
+<img width="1535" height="648" alt="image" src="https://github.com/user-attachments/assets/aac5b02c-b394-413d-a0b8-7493c4ce9d24" />
 
-- Online payment integration
-- Order tracking
-- Improved search and filtering
-- Responsive UI enhancements
-- Deployment and production configuration
+<img width="1516" height="458" alt="image" src="https://github.com/user-attachments/assets/1931b85e-a948-4e6e-a97c-6fe6de6ee015" />
+
+<img width="1520" height="742" alt="image" src="https://github.com/user-attachments/assets/b204e5cd-0af7-436f-afb3-a9f69a519685" />
+
+<img width="1521" height="695" alt="image" src="https://github.com/user-attachments/assets/2c9a8f2a-5637-4b96-8559-b61837d966b1" />
+
+<img width="957" height="546" alt="image" src="https://github.com/user-attachments/assets/92745181-55f0-45c0-9076-5b4a46d57fdc" />
+
+<img width="1028" height="597" alt="image" src="https://github.com/user-attachments/assets/4626f263-6bb8-4fb0-91f8-c01ea138907d" />
+
 
 ## 👨‍💻 Author
 
-**Akshat Gupta**
+**Akshat**
 
-GitHub: https://github.com/AKSHAT0008
+GitHub: [AKSHAT0008](https://github.com/AKSHAT0008)
 
 ---
 
-If you find this project useful, consider giving it a ⭐ on GitHub.
+*Built as a full-stack development project to explore frontend state management, REST APIs, authentication, database integration, and cloud-based image uploads.*
